@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Structural Engine へのコメント	</title>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>構造計算をもっと身近に</description>
+	<lastBuildDate>Wed, 14 Nov 2018 09:45:26 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
+	<item>
+		<title>
+		WordPress コメントの投稿者 より 道路橋合成桁の設計計算例 へのコメント		</title>
+		<link>/2017/12/28/%e9%81%93%e8%b7%af%e6%a9%8b%e5%90%88%e6%88%90%e6%a1%81%e3%81%ae%e8%a8%ad%e8%a8%88%e8%a8%88%e7%ae%97%e4%be%8b/#comment-1</link>
+
+		<dc:creator><![CDATA[WordPress コメントの投稿者]]></dc:creator>
+		<pubDate>Thu, 28 Dec 2017 03:32:22 +0000</pubDate>
+		<guid isPermaLink="false">http://structuralengine.jp/?p=1#comment-1</guid>
+
+					<description><![CDATA[こんにちは、これはコメントです。
+コメントの承認、編集、削除を始めるにはダッシュボードの「コメント画面」にアクセスしてください。
+コメントのアバターは「&lt;a href=&quot;https://gravatar.com&quot;&gt;Gravatar&lt;/a&gt;」から取得されます。]]></description>
+			<content:encoded><![CDATA[<p>こんにちは、これはコメントです。<br />
+コメントの承認、編集、削除を始めるにはダッシュボードの「コメント画面」にアクセスしてください。<br />
+コメントのアバターは「<a href="https://gravatar.com/">Gravatar</a>」から取得されます。</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>
