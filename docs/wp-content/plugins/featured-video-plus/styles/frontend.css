@@ -66,7 +66,7 @@
 .fvp-overlay .fvp-actionicon.play,
 .fvp-dynamic .fvp-actionicon.play {
   display: block;
-  background-image: url('/wp-content/plugins/featured-video-plus/img/playicon.png');
+  background-image: url('../img/playicon.png');
 }
 .fvp-overlay .fvp-actionicon.load,
 .fvp-dynamic .fvp-actionicon.load {
@@ -74,11 +74,11 @@
 }
 .fvp-overlay .fvp-actionicon.load.w,
 .fvp-dynamic .fvp-actionicon.load.w {
-  background-image: url('/wp-content/plugins/featured-video-plus/img/loadicon_w.gif');
+  background-image: url('../img/loadicon_w.gif');
 }
 .fvp-overlay .fvp-actionicon.load.b,
 .fvp-dynamic .fvp-actionicon.load.b {
-  background-image: url('/wp-content/plugins/featured-video-plus/img/loadicon_b.gif');
+  background-image: url('../img/loadicon_b.gif');
 }
 #DOMWindow {
   background: transparent center center no-repeat;
@@ -86,7 +86,7 @@
   height: auto;
   margin: auto auto;
   overflow: hidden;
-  background-image: url('/wp-content/plugins/featured-video-plus/img/loadicon_w.gif');
+  background-image: url('../img/loadicon_w.gif');
 }
 .fvp-onload {
   display: none !important;
