@@ -1,12 +1,17 @@
-<h2>Payment Request Button</h2>
+<div *ngIf="invalidError" style="color:red">
+  {{ invalidError.message }}
+</div>
 
-<ngx-stripe-payment-request-button
-  [paymentOptions]="paymentRequestOptions"
-  (paymentMethod)="onPaymentMethod($event)"
-  (shippingaddresschange)="onShippingAddressChange($event)"
-  (notavailable)="onNotAvailable()"
-></ngx-stripe-payment-request-button>
+<stripe-card #stripeCard
+  (catch) = "onStripeError($event)"
+  [(complete)] = "cardDetailsFilledOut"
+  [(invalid)] = "invalidError"
+  (cardMounted) = "cardCaptureReady = 1"
+  (paymentMethodChange) = "setPaymentMethod($event)"
+  (tokenChange) = "setStripeToken($event)"
+  (sourceChange) = "setStripeSource($event)"
+></stripe-card>
 
-<p><a href="https://richnologies.gitbook.io/ngx-stripe/" target="_new">
-    参考サイト[ngx-stripe]
-</a></p>
+<button type="button" (click)="stripeCard.createPaymentMethod(extraData)">createPaymentMethod</button>
+<button type="button" (click)="stripeCard.createSource(extraData)">createSource</button>
+<button type="button" (click)="stripeCard.createToken(extraData)">createToken</button>

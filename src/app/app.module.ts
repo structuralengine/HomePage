@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxStripeModule } from 'ngx-stripe';
+import { StripeModule } from "stripe-angular"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +25,7 @@ import { ShopComponent } from './shop/shop.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxStripeModule.forRoot('pk_test_feXANuMavbqDI0fNHJdNhGk2'),
+    StripeModule.forRoot('pk_test_feXANuMavbqDI0fNHJdNhGk2'),
   ],
   providers: [],
   bootstrap: [AppComponent]
