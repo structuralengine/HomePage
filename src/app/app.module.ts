@@ -5,12 +5,16 @@ import { NgxStripeModule } from 'ngx-stripe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { LawComponent } from './law/law.component';
 import { MainComponent } from './main/main.component';
 import { ShopComponent } from './shop/shop.component';
+import { SliderComponent } from './slider/slider.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,13 +23,17 @@ import { ShopComponent } from './shop/shop.component';
     PrivacyPolicyComponent,
     LawComponent,
     MainComponent,
-    ShopComponent
+    ShopComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxStripeModule.forRoot('pk_test_feXANuMavbqDI0fNHJdNhGk2'),
+    BrowserModule,
+    BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
