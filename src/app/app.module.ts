@@ -16,6 +16,8 @@ import { ShopComponent } from './shop/shop.component';
 import { BaseComponent } from './base/base.component';
 import { SliderComponent } from './slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ServiceComponent } from './main/service/service.component';
+import { OnedayComponent } from './main/oneday/oneday.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ShopComponent,
     BaseComponent,
     SliderComponent,
+    ServiceComponent,
+    OnedayComponent,
   ],
   imports: [
     BrowserModule,
