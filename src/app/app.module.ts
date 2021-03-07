@@ -11,6 +11,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { LawComponent } from './law/law.component';
 import { MainComponent } from './main/main.component';
 import { ShopComponent } from './shop/shop.component';
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ShopComponent } from './shop/shop.component';
     PrivacyPolicyComponent,
     LawComponent,
     MainComponent,
-    ShopComponent
+    ShopComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
