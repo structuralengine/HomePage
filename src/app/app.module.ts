@@ -13,6 +13,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { LawComponent } from './law/law.component';
 import { MainComponent } from './main/main.component';
 import { ShopComponent } from './shop/shop.component';
+import { BaseComponent } from './base/base.component';
 import { SliderComponent } from './slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LawComponent,
     MainComponent,
     ShopComponent,
-    SliderComponent
+    BaseComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
