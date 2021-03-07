@@ -9,7 +9,7 @@ import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import {  SliderComponent } from  './slider/slider.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/base', pathMatch: 'full' },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   { path: 'terms-of-use', component: TermsOfUseComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
