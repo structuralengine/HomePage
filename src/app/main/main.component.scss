@@ -5,51 +5,51 @@ header {
     width: 100%;
     min-height: 40px;
     .content-header {
-        margin: 0 auto;
+        // margin: 0 auto;  // margin: 0 autoはwidthが明確なときに使える。
         .menu {
-            float: right;
-            display: block;
+            //   display: block;
+            float: right; //floatをつけたらblock要素の概念はなくなる
             margin: 0 16px 12px;
             ul {
-                display: table;
-                overflow: hidden;
-                position: relative;
-                z-index: 999;
+                // display: table;　//table使うべからず
+                // overflow: hidden;
+                // position: relative;
+                // z-index: 999;
                 li {
-                    display: table-cell;
-                    margin: 0 10px;
+                    display: inline-block;
+                    // margin: 0 10px;
                     padding: 0 20px;
-                    border-bottom: none;
+                    //border-bottom: none;
                     a {
                         position: relative;
-                        display: inline-block;
+                        display: inline;
                         text-decoration: none;
                         color: #333333;
+                        &::after {
+                            position: absolute;
+                            bottom: -5.5px;
+                            left: 0;
+                            content: "";
+                            width: 100%;
+                            height: 4px;
+                            background: #47885e;
+                            transform: scale(0, 1);
+                            transform-origin: left top;
+                            transition: transform 0.3s;
+                        }
                         &:hover {
                             cursor: pointer;
                             opacity: 0.7;
+                            &::after {
+                                transform: scale(1, 1);
+                            }
                         }
-                    }
-                    a::after {
-                        position: absolute;
-                        bottom: -1.5px;
-                        left: 0;
-                        content: "";
-                        width: 100%;
-                        height: 4px;
-                        background: #47885e;
-                        transform: scale(0, 1);
-                        transform-origin: left top;
-                        transition: transform 0.3s;
-                    }
-                    a:hover::after {
-                        transform: scale(1, 1);
                     }
                 }
             }
         }
     }
-    .content-header:after {
+    &:after {
         content: "";
         clear: both;
         display: block;
@@ -117,29 +117,21 @@ header {
             font-size: 16px;
             line-height: 32px;
         }
-
         .box {
             .service-box {
-                &.left {
-                    float: left;
-                    width: 50%;
-                }
-                &.right {
-                    float: right;
-                    width: 50%;
-                }
-                // width: calc(100%/2);
                 margin-bottom: 14px;
                 padding: 14px;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
+                width: 100%;
                 .box-inner {
                     border: 1px solid #a9a9a9;
                     padding: 14px 14px 28px 14px;
                     background: #f5f5f5;
                     box-sizing: border-box;
                     display: block;
+                    width: 48%;
                     //width: 100%;
                     .image {
                         text-align: center;
@@ -149,11 +141,18 @@ header {
                         }
                     }
                     .text-head {
-                        h2 {
+                        a {
+                            display: block;
                             font-size: 20px;
                             font-weight: bold;
                             margin: 20px 0px;
                             text-align: center;
+                            color: #333333;
+                            text-decoration: none;
+                            &:hover {
+                                cursor: pointer;
+                                opacity: 0.7;
+                            }
                         }
                     }
                     .text-body {
@@ -163,28 +162,20 @@ header {
                             margin-bottom: 13px;
                             //max-width: 800px;
                         }
-                        .btn {
+                        a {
                             display: block;
-                            font-size: 16px;
+                            width: 100%;
                             line-height: 24px;
-                            //max-width: 800px;
-                            padding: 7px 0px;
-                            border-bottom: 1px solid #a9a9a9;
                             margin: 0px;
+                            padding: 7px 0px;
+                            text-decoration: none;
+                            color: #333333;
+                            border-bottom: 1px solid #a9a9a9;
+                            font-size: 16px;
+                            text-align: left;
                             &:hover {
+                                cursor: pointer;
                                 opacity: 0.7;
-                            }
-                            a {
-                                //border-bottom: none;
-                                display: table;
-                                //width: 100%;
-                                //position: relative;
-                                text-decoration: none;
-                                span {
-                                    color: #333333;
-                                    //width: calc(100% - 20px);
-                                    display: inline-block;
-                                }
                             }
                         }
                     }
@@ -222,6 +213,7 @@ header {
     bottom: 0;
     opacity: 0.6;
 }
+
 #page_top a {
     position: relative;
     display: block;
@@ -229,6 +221,7 @@ header {
     height: 50px;
     text-decoration: none;
 }
+
 #page_top a::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
