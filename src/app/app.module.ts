@@ -5,12 +5,19 @@ import { StripeModule } from "stripe-angular"
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { LawComponent } from './law/law.component';
 import { MainComponent } from './main/main.component';
 import { ShopComponent } from './shop/shop.component';
+import { BaseComponent } from './base/base.component';
+import { SliderComponent } from './slider/slider.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ServiceComponent } from './main/service/service.component';
+import { OnedayComponent } from './main/oneday/oneday.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +26,20 @@ import { ShopComponent } from './shop/shop.component';
     PrivacyPolicyComponent,
     LawComponent,
     MainComponent,
-    ShopComponent
+    ShopComponent,
+    BaseComponent,
+    SliderComponent,
+    ServiceComponent,
+    OnedayComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     StripeModule.forRoot('pk_test_feXANuMavbqDI0fNHJdNhGk2'),
+    BrowserModule,
+    BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
