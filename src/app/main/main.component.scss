@@ -7,7 +7,7 @@ header {
     .content-header {
         .menu {
             float: right;
-            margin: 0 16px 12px;
+            margin-right: 12px;
             ul {
                 li {
                     display: inline-block;
@@ -48,39 +48,32 @@ header {
     }
 }
 
-.buttun {
-    padding: 80px 16px;
-    .buttun-inner {
-        width: 200px;
-        font-size: 16px;
-        line-height: 40px;
-        color: #ffffff;
-        border: 2px solid #3b7960;
-        background: #3b7960;
-        display: inline-block;
-        text-align: center;
-        border-radius: 4px;
-        &:hover {
-            cursor: pointer;
-            opacity: 0.7;
-        }
-    }
-}
+// .buttun {
+//     padding: 80px 16px;
+//     .buttun-inner {
+//         width: 200px;
+//         font-size: 16px;
+//         line-height: 40px;
+//         color: #ffffff;
+//         border: 2px solid #3b7960;
+//         background: #3b7960;
+//         display: inline-block;
+//         text-align: center;
+//         border-radius: 4px;
+//         &:hover {
+//             cursor: pointer;
+//             opacity: 0.7;
+//         }
+//     }
+// }
 
-//背景画像
-.letter {
-    background-image: url("https://magazine-cf.techacademy.jp/wp-content/uploads/2021/02/14012940/typing_on_laptop_712.jpg");
-    //no-repeat center/cover;
-    width: 100%;
-    position: relative;
-    padding-top: 80px;
-}
-
+//カルーセル
 .container-fluid {
     padding-top: 105px;
     text-align: center;
 }
 
+//
 .content {
     .content-inner {
         max-width: 1200px;
@@ -90,24 +83,51 @@ header {
         .title {
             text-align: center;
             h2 {
-                font-size: 24px;
-                margin-bottom: 2px;
+                font-size: 32px;
             }
             .entit {
-                font-size: 8px;
+                font-size: 16px;
                 color: #3b7960;
-                margin-top: 2px;
             }
         }
+        .text-top {
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+        }
+
         .subtit {
             display: inline-block;
-            font-size: 20px;
+            font-size: 24px;
             margin: 8px 0;
             border-bottom: 2px solid #47885e;
         }
         .text {
             font-size: 16px;
             line-height: 32px;
+        }
+
+        .icon-box {
+            display: flex;
+            img {
+                width: 200px;
+                height: 200px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 32px;
+                padding-left: 10px;
+            }
+        }
+        .icon-text {
+            margin: 10px 0;
+            .sm {
+                font-size: 12px;
+                margin-bottom: 0;
+            }
+            .lg {
+                font-size: 20px;
+            }
         }
 
         .service-box {
@@ -164,9 +184,24 @@ header {
                         margin: 0px;
                         padding: 7px 0px;
                         border-bottom: 1px solid #a9a9a9;
+                        position: relative;
+                        padding-left: 20px;
                         &:hover {
                             cursor: pointer;
                             opacity: 0.7;
+                        }
+                        &:before {
+                            content: "";
+                            width: 6px;
+                            height: 6px;
+                            border: 0;
+                            border-top: solid 2px #333333;
+                            border-right: solid 2px #333333;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            margin-top: -4px;
+                            transform: rotate(45deg);
                         }
                     }
                 }
