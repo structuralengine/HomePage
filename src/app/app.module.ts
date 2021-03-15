@@ -18,6 +18,7 @@ import { SliderComponent } from './slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceComponent } from './main/service/service.component';
 import { OnedayComponent } from './main/oneday/oneday.component';
+import { AboutComponent } from './main/about/about.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OnedayComponent } from './main/oneday/oneday.component';
     SliderComponent,
     ServiceComponent,
     OnedayComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
