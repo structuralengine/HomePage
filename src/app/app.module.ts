@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StripeModule } from "stripe-angular"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
@@ -20,6 +19,9 @@ import { ServiceComponent } from './main/service/service.component';
 import { OnedayComponent } from './main/oneday/oneday.component';
 import { AboutComponent } from './main/about/about.component';
 
+import { NgxStripeModule } from 'ngx-stripe';
+import { CreateTokenComponent } from './shop/create-token/create-token.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,15 +35,17 @@ import { AboutComponent } from './main/about/about.component';
     ServiceComponent,
     OnedayComponent,
     AboutComponent,
+    CreateTokenComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StripeModule.forRoot('pk_test_feXANuMavbqDI0fNHJdNhGk2'),
     BrowserModule,
     BrowserAnimationsModule,
     NgbModule,
+    ReactiveFormsModule,
+    NgxStripeModule.forRoot('sk_test_iMJrtEYhBm1gSAbkVL0FlTb9'),
   ],
   providers: [],
   bootstrap: [AppComponent]
