@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
@@ -17,10 +17,10 @@ import { ServiceComponent } from './main/service/service.component';
 import { OnedayComponent } from './main/oneday/oneday.component';
 import { AboutComponent } from './main/about/about.component';
 
-//import the ngx Stripe Module
-import { NgxStripeModule } from 'ngx-stripe';
+//import the Stripe Module
 import { ShopComponent } from './shop/shop.component';
 import { PaymentFormComponent } from './shop/payment-form/payment-form.component';
+import { StripeTestComponent } from './shop/stripe-test/stripe-test.component';
 
 
 @NgModule({
@@ -37,6 +37,7 @@ import { PaymentFormComponent } from './shop/payment-form/payment-form.component
     OnedayComponent,
     AboutComponent,
     PaymentFormComponent,
+    StripeTestComponent,
   ],
   imports: [
     BrowserModule,
