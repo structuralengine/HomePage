@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { loadStripe } from '@stripe/stripe-js';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
+declare var paypal;
 
 @Component({
   selector: 'app-shop',
@@ -7,40 +8,46 @@ import { loadStripe } from '@stripe/stripe-js';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
+  @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
+
+  public product = {
+    price: 777.77,
+    description: 'used couch, decent condition',
+    img: 'assets/img/couch.jpg'
+  };
+  
+  paidFor = false;
 
   public ngOnInit() {
-    this.invokeStripeCheckout();
+    this.createPaymentButton();
   }
 
-  private invokeStripeCheckout() {
-    // 決済 stripe のソースを body に埋め込む
-    if (!window.document.getElementById('stripe-script')) {
-      const script = window.document.createElement('script');
-      script.id = 'stripe-script';
-      script.type = 'text/javascript';
-      script.src = 'https://checkout.stripe.com/checkout.js';
-      window.document.body.appendChild(script);
-    }
-  }
-
-
-  public makePayment(amount: any): void {
-    const myStripeCheckout = (<any>window).StripeCheckout;
-    const paymentHandler = myStripeCheckout.configure({
-      key: 'pk_test_feXANuMavbqDI0fNHJdNhGk2',
-      locate: 'auto',
-      token: function (stripeToken: any) {
-        console.log(stripeToken.card);
-        alert('stripe token generated!');
-      }
-    });
-
-    paymentHandler.open({
-      name: 'Technical Adda',
-      description: '4 Products Added',
-      amount: amount * 100
-    })
-
+  private createPaymentButton(): void {
+    paypal
+      .Buttons({
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [
+              {
+                description: this.product.description,
+                amount: {
+                  currency_code: 'USD',
+                  value: this.product.price
+                }
+              }
+            ]
+          });
+        },
+        onApprove: async (data, actions) => {
+          const order = await actions.order.capture();
+          this.paidFor = true;
+          console.log(order);
+        },
+        onError: err => {
+          console.log(err);
+        }
+      })
+      .render(this.paypalElement.nativeElement);
   }
 
 }
