@@ -9,10 +9,10 @@ import { loadStripe } from '@stripe/stripe-js';
 export class ShopComponent implements OnInit {
 
   public ngOnInit() {
-    this.invokeStripe();
+    this.invokeStripeCheckout();
   }
 
-  invokeStripe() {
+  private invokeStripeCheckout() {
     // 決済 stripe のソースを body に埋め込む
     if (!window.document.getElementById('stripe-script')) {
       const script = window.document.createElement('script');
@@ -24,7 +24,7 @@ export class ShopComponent implements OnInit {
   }
 
 
-  makePayment(amount: any): void {
+  public makePayment(amount: any): void {
     const myStripeCheckout = (<any>window).StripeCheckout;
     const paymentHandler = myStripeCheckout.configure({
       key: 'pk_test_feXANuMavbqDI0fNHJdNhGk2',

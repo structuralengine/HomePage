@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 
 //import the Stripe Module
 import { ShopComponent } from './shop/shop.component';
+import { CreateCustomerComponent } from './shop/create-customer/create-customer.component';
 
 
 
@@ -18,6 +19,7 @@ import { ShopComponent } from './shop/shop.component';
     AppComponent,
     MainComponent,
     ShopComponent,
+    CreateCustomerComponent,
   ],
   imports: [
     BrowserModule,
