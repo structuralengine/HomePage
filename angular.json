@@ -33,7 +33,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/lib/jquery.js",
+              "src/lib/nicepage.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +99,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/lib/jquery.js",
+              "src/lib/nicepage.js"
+            ]
           }
         },
         "lint": {
@@ -127,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "structuralengine"
+  "defaultProject": "structuralengine",
+  "cli": {
+    "analytics": "6860d399-5818-42d9-80aa-aa6668b08d5c"
+  }
 }
