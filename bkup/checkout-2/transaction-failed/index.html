@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Last-Modified" content="Thu, 07 Jan 2021 12:34:35 GMT">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>Transaction Failed &#8211; Structural Engine</title>
+<link rel='dns-prefetch' href="//www.google.com" />
+<link rel='dns-prefetch' href="//secure.gravatar.com" />
+<link rel='dns-prefetch' href="//fonts.googleapis.com" />
+<link rel='dns-prefetch' href="//s.w.org" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/structuralengine.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://c0.wp.com/c/5.5.1/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href="/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.9" type='text/css' media='all' />
+<link rel='stylesheet' id='edd-styles-css'  href="/wp-content/plugins/easy-digital-downloads/templates/edd.min.css?ver=2.9.23" type='text/css' media='all' />
+<link rel='stylesheet' id='fvp-frontend-css'  href="/wp-content/plugins/featured-video-plus/styles/frontend.css?ver=2.3.3" type='text/css' media='all' />
+<style id='md-style-inline-css' type='text/css'>
+ .md-widget-toc { padding: 15px; } .md-widget-toc a { color: #333333; } .post-toc-header { font-weight: 600; margin-bottom: 10px; } .md-post-toc { font-size: 0.9em; } .post h2 { overflow: hidden; } .post-toc-block { margin: 0 10px 20px 10px; overflow: hidden; } .post-toc-block.with-border { border: 1px #dddddd solid; padding: 10px; } .post-toc-block.float-right { max-width: 320px; float: right; } .post-toc-block.float-left { max-width: 320px; float: left; } .md-widget-toc ul, .md-widget-toc ol, .md-post-toc ul, .md-post-toc ol { padding-left: 15px; margin: 0; } .md-widget-toc ul ul, .md-widget-toc ul ol, .md-widget-toc ol ul, .md-widget-toc ol ol, .md-post-toc ul ul, .md-post-toc ul ol, .md-post-toc ol ul, .md-post-toc ol ol { padding-left: 2em; } .md-widget-toc ul ol, .md-post-toc ul ol { list-style-type: lower-roman; } .md-widget-toc ul ul ol, .md-widget-toc ul ol ol, .md-post-toc ul ul ol, .md-post-toc ul ol ol { list-style-type: lower-alpha; } .md-widget-toc ol ul, .md-widget-toc ol ol, .md-post-toc ol ul, .md-post-toc ol ol { padding-left: 2em; } .md-widget-toc ol ol, .md-post-toc ol ol { list-style-type: lower-roman; } .md-widget-toc ol ul ol, .md-widget-toc ol ol ol, .md-post-toc ol ul ol, .md-post-toc ol ol ol { list-style-type: lower-alpha; } 
+</style>
+<link rel='stylesheet' id='onepress-fonts-css'  href='https://fonts.googleapis.com/css?family=Raleway%3A400%2C500%2C600%2C700%2C300%2C100%2C800%2C900%7COpen+Sans%3A400%2C300%2C300italic%2C400italic%2C600%2C600italic%2C700%2C700italic&#038;subset=latin%2Clatin-ext&#038;ver=2.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='onepress-animate-css'  href="/wp-content/themes/onepress/assets/css/animate.min.css?ver=2.2.4" type='text/css' media='all' />
+<link rel='stylesheet' id='onepress-fa-css'  href="/wp-content/themes/onepress/assets/css/font-awesome.min.css?ver=4.7.0" type='text/css' media='all' />
+<link rel='stylesheet' id='onepress-bootstrap-css'  href="/wp-content/themes/onepress/assets/css/bootstrap.min.css?ver=2.2.4" type='text/css' media='all' />
+<link rel='stylesheet' id='onepress-style-css'  href="/wp-content/themes/onepress/style.css?ver=5.5.1" type='text/css' media='all' />
+<style id='onepress-style-inline-css' type='text/css'>
+#main .video-section section.hero-slideshow-wrapper{background:transparent}.hero-slideshow-wrapper:after{position:absolute;top:0px;left:0px;width:100%;height:100%;background-color:rgba(234,234,234,0.3);display:block;content:""}.body-desktop .parallax-hero .hero-slideshow-wrapper:after{display:none!important}#parallax-hero>.parallax-bg::before{background-color:rgba(234,234,234,0.3);opacity:1}.body-desktop .parallax-hero .hero-slideshow-wrapper:after{display:none!important}a,.screen-reader-text:hover,.screen-reader-text:active,.screen-reader-text:focus,.header-social a,.onepress-menu a:hover,.onepress-menu ul li a:hover,.onepress-menu li.onepress-current-item>a,.onepress-menu ul li.current-menu-item>a,.onepress-menu>li a.menu-actived,.onepress-menu.onepress-menu-mobile li.onepress-current-item>a,.site-footer a,.site-footer .footer-social a:hover,.site-footer .btt a:hover,.highlight,#comments .comment .comment-wrapper .comment-meta .comment-time:hover,#comments .comment .comment-wrapper .comment-meta .comment-reply-link:hover,#comments .comment .comment-wrapper .comment-meta .comment-edit-link:hover,.btn-theme-primary-outline,.sidebar .widget a:hover,.section-services .service-item .service-image i,.counter_item .counter__number,.team-member .member-thumb .member-profile a:hover,.icon-background-default{color:#03c4eb}input[type="reset"],input[type="submit"],input[type="submit"],input[type="reset"]:hover,input[type="submit"]:hover,input[type="submit"]:hover .nav-links a:hover,.btn-theme-primary,.btn-theme-primary-outline:hover,.section-testimonials .card-theme-primary,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,.woocommerce button.button.alt,.pirate-forms-submit-button,.pirate-forms-submit-button:hover,input[type="reset"],input[type="submit"],input[type="submit"],.pirate-forms-submit-button,.contact-form div.wpforms-container-full .wpforms-form .wpforms-submit,.contact-form div.wpforms-container-full .wpforms-form .wpforms-submit:hover,.nav-links a:hover,.nav-links a.current,.nav-links .page-numbers:hover,.nav-links .page-numbers.current{background:#03c4eb}.btn-theme-primary-outline,.btn-theme-primary-outline:hover,.pricing__item:hover,.section-testimonials .card-theme-primary,.entry-content blockquote{border-color:#03c4eb}#footer-widgets{}.gallery-carousel .g-item{padding:0px 1px}.gallery-carousel{margin-left:-1px;margin-right:-1px}.gallery-grid .g-item,.gallery-masonry .g-item .inner{padding:1px}.gallery-grid,.gallery-masonry{margin:-1px}
+</style>
+<link rel='stylesheet' id='onepress-gallery-lightgallery-css'  href="/wp-content/themes/onepress/assets/css/lightgallery.css?ver=5.5.1" type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://c0.wp.com/p/jetpack/8.5/css/jetpack.css' type='text/css' media='all' />
+<script type='text/javascript' id='jquery-core-js-extra'>
+/* <![CDATA[ */
+var onepress_js_settings = {"onepress_disable_animation":"","onepress_disable_sticky_header":"","onepress_vertical_align_menu":"","hero_animation":"flipInX","hero_speed":"5000","hero_fade":"750","hero_duration":"5000","hero_disable_preload":"","is_home":"","gallery_enable":"1","is_rtl":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.5.1/wp-includes/js/jquery/jquery.js' id='jquery-core-js'></script>
+<script type='text/javascript' src="/wp-content/plugins/featured-video-plus/js/jquery.fitvids.min.js?ver=master-2015-08" id='jquery.fitvids-js'></script>
+<script type='text/javascript' id='fvp-frontend-js-extra'>
+/* <![CDATA[ */
+var fvpdata = {"ajaxurl":"https:\/\/structuralengine.com\/wp-admin\/admin-ajax.php","nonce":"e9cb6f824f","fitvids":"1","dynamic":"","overlay":"","opacity":"0.75","color":"b","width":"640"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="/wp-content/plugins/featured-video-plus/js/frontend.min.js?ver=2.3.3" id='fvp-frontend-js'></script>
+<link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/106" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5.1 with StaticPress ver.0.4.5" />
+<link rel="canonical" href="https://structuralengine.com/checkout-2/transaction-failed/" />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fstructuralengine.com%2Fcheckout-2%2Ftransaction-failed%2F" />
+<meta name="edd-chosen-gateway" content="manual"/>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="generator" content="Easy Digital Downloads v2.9.23 with StaticPress ver.0.4.5" />
+
+<link rel='dns-prefetch' href="//v0.wordpress.com"/>
+<link rel='dns-prefetch' href="//c0.wp.com"/>
+<style type='text/css'>img#wpstats{display:none}</style><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Transaction Failed" />
+<meta property="og:url" content="https://structuralengine.com/checkout-2/transaction-failed/" />
+<meta property="og:description" content="Your transaction failed, please try again or contact si&hellip;" />
+<meta property="article:published_time" content="2018-01-04T06:16:45+00:00" />
+<meta property="article:modified_time" content="2018-01-04T06:16:45+00:00" />
+<meta property="og:site_name" content="Structural Engine" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:text:title" content="Transaction Failed" />
+<meta name="twitter:card" content="summary" />
+
+<!-- End Jetpack Open Graph Tags -->
+			<style type="text/css" id="wp-custom-css">
+				.minu-point-es {
+    background: #fffea6;
+}
+th{
+	
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+}
+.tcheading{
+	
+    color: #020202;
+    font-weight: bold;
+    /* text-shadow: 2px 2px 8px #000; */
+
+}
+
+.hero__content .btn-secondary-outline {
+  background: #03c4eb;
+  color: #FFF;
+}
+
+.hero__content .btn-secondary-outline:hover {
+  background: #333;
+  color: #FFF;
+}			</style>
+		</head>
+
+<body class="page-template-default page page-id-106 page-child parent-pageid-104 wp-custom-logo edd-failed-transaction edd-page edd-test-mode group-blog">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
+    <div id="header-section" class="h-on-top no-transparent">		<header id="masthead" class="site-header header-contained is-sticky no-scroll no-t h-on-top" role="banner">
+			<div class="container">
+				<div class="site-branding">
+				<div class="site-brand-inner has-logo-img has-desc"><div class="site-logo-div"><a href="/" class="custom-logo-link  no-t-logo" rel="home" itemprop="url"><img width="302" height="36" src="/wp-content/uploads/2018/01/logo3.png" class="custom-logo" alt="Structural Engine" loading="lazy" itemprop="logo" /></a></div><p class="site-description">構造計算をもっと身近に</p></div>				</div>
+				<div class="header-right-wrapper">
+					<a href="#0" id="nav-toggle">メニュー<span></span></a>
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<ul class="onepress-menu">
+							<li id="menu-item-85" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-85"><a href="http://structuralengine.com">ホーム</a></li>
+<li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a href="/our-vision/service-frame-web/">立体骨組応力解析</a></li>
+<li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139"><a href="/our-vision/service-wen-dan/">断面性能照査</a></li>
+<li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a href="/our-vision/service-soil-structure/">杭の支持力係数</a></li>
+<li id="menu-item-141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-141"><a href="/our-vision/response-displacement/">地盤の応答変位量</a></li>
+<li id="menu-item-125" class="menu-item menu-item-type-taxonomy menu-item-object-download_category menu-item-125"><a href="/downloads/category/shop1/">ポイントを購入する</a></li>
+<li id="menu-item-330" class="nmr-logged-out menu-item menu-item-type-custom menu-item-object-custom menu-item-330"><a href="http://structuralengine.com/wp-login.php">ログイン</a></li>
+						</ul>
+					</nav>
+					<!-- #site-navigation -->
+				</div>
+			</div>
+		</header><!-- #masthead -->
+		</div>					<div class="page-header">
+				<div class="container">
+					<h1 class="entry-title">Transaction Failed</h1>				</div>
+			</div>
+					<div id="content" class="site-content">
+        		<div id="content-inside" class="container right-sidebar">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main" role="main">
+
+					
+						
+<article id="post-106" class="post-106 page type-page status-publish hentry">
+	<header class="entry-header">
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Your transaction failed, please try again or contact site support.</p>
+			</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+
+						
+					
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+                            
+<div id="secondary" class="widget-area sidebar" role="complementary">
+	<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">検索:</span>
+					<input type="search" class="search-field" placeholder="検索 &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="検索" />
+			</form></aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h2 class="widget-title">最近の投稿</h2>
+		<ul>
+											<li>
+					<a href="/2020/06/24/bowlingcontest/">保護中: ボーリング柱状図自動読み取りコンテスト</a>
+									</li>
+											<li>
+					<a href="/2020/06/06/manual_u/">U字擁壁の底板を設計する方法</a>
+									</li>
+											<li>
+					<a href="/2020/06/06/1582/">(タイトルなし)</a>
+									</li>
+											<li>
+					<a href="/2017/12/28/%e9%81%93%e8%b7%af%e6%a9%8b%e5%90%88%e6%88%90%e6%a1%81%e3%81%ae%e8%a8%ad%e8%a8%88%e8%a8%88%e7%ae%97%e4%be%8b/">道路橋合成桁の設計計算例</a>
+									</li>
+					</ul>
+
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">最近のコメント</h2><ul id="recentcomments"><li class="recentcomments"><a href="/2017/12/28/%e9%81%93%e8%b7%af%e6%a9%8b%e5%90%88%e6%88%90%e6%a1%81%e3%81%ae%e8%a8%ad%e8%a8%88%e8%a8%88%e7%ae%97%e4%be%8b/#comment-1">道路橋合成桁の設計計算例</a> に <span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow ugc' class='url'>WordPress コメントの投稿者</a></span> より</li></ul></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">アーカイブ</h2>
+			<ul>
+					<li><a href="/2020/06/">2020年6月</a></li>
+	<li><a href="/2017/12/">2017年12月</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">カテゴリー</h2>
+			<ul>
+					<li class="cat-item cat-item-1"><a href="/category/%e6%9c%aa%e5%88%86%e9%a1%9e/">未分類</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="/category/%e8%a8%ad%e8%a8%88%e8%a8%88%e7%ae%97%e4%be%8b/">設計計算例</a>
+</li>
+			</ul>
+
+			</aside><aside id="meta-2" class="widget widget_meta"><h2 class="widget-title">メタ情報</h2>
+		<ul>
+						<li><a href="/wp-login.php">ログイン</a></li>
+			<li><a href="/feed/">投稿フィード</a></li>
+			<li><a href="/comments/feed/">コメントフィード</a></li>
+
+			<li><a href="https://ja.wordpress.org/">WordPress.org</a></li>
+		</ul>
+
+		</aside></div><!-- #secondary -->
+            
+		</div><!--#content-inside -->
+	</div><!-- #content -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        			<div id="footer-widgets" class="footer-widgets section-padding ">
+				<div class="container">
+					<div class="row">
+														<div id="footer-1" class="col-md-3 col-sm-12 footer-column widget-area sidebar" role="complementary">
+									<aside id="nav_menu-2" class="footer-widget widget widget_nav_menu"><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-278" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-278"><a href="http://structuralengine.com/terms-of-use/">利用規約</a></li>
+<li id="menu-item-277" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-277"><a href="http://structuralengine.com/privacy-policy/">プライバシーポリシー</a></li>
+<li id="menu-item-276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-276"><a href="http://structuralengine.com/law/">特定商取引法に基づく表示</a></li>
+</ul></div></aside>								</div>
+																<div id="footer-2" class="col-md-3 col-sm-12 footer-column widget-area sidebar" role="complementary">
+																	</div>
+																<div id="footer-3" class="col-md-3 col-sm-12 footer-column widget-area sidebar" role="complementary">
+																	</div>
+																<div id="footer-4" class="col-md-3 col-sm-12 footer-column widget-area sidebar" role="complementary">
+																	</div>
+													</div>
+				</div>
+			</div>
+				
+        <div class="site-info">
+            <div class="container">
+                                    <div class="btt">
+                        <a class="back-to-top" href="#page" title="ページトップへ戻る"><i class="fa fa-angle-double-up wow flash" data-wow-duration="2s"></i></a>
+                    </div>
+                                		Copyright &copy; 2021 Structural Engine		<span class="sep"> &ndash; </span>
+		<a href="https://www.famethemes.com/themes/onepress">OnePress</a> theme by FameThemes		            </div>
+        </div>
+        <!-- .site-info -->
+
+    </footer><!-- #colophon -->
+    </div><!-- #page -->
+
+
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/structuralengine.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src="/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.9" id='contact-form-7-js'></script>
+<script type='text/javascript' id='edd-ajax-js-extra'>
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"https:\/\/structuralengine.com\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"","already_in_cart_message":"\u3053\u306e\u5546\u54c1\u306f\u3059\u3067\u306b\u8cb7\u3044\u7269\u30ab\u30b4\u306b\u3042\u308a\u307e\u3059\u3002","empty_cart_message":"\u304a\u8cb7\u3044\u7269\u30ab\u30b4\u306f\u7a7a\u3067\u3059","loading":"\u8aad\u307f\u8fbc\u307f\u4e2d","select_option":"\u30aa\u30d7\u30b7\u30e7\u30f3\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044","is_checkout":"0","default_gateway":"manual","redirect_to_checkout":"0","checkout_page":"https:\/\/structuralengine.com\/checkout-2\/","permalinks":"1","quantities_enabled":"","taxes_enabled":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="/wp-content/plugins/easy-digital-downloads/assets/js/edd-ajax.min.js?ver=2.9.23" id='edd-ajax-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6Lesf6wUAAAAAAIClWUldyiM7o0dbKYAcALn9ZDH&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' src="/wp-content/themes/onepress/assets/js/plugins.js?ver=2.2.4" id='onepress-js-plugins-js'></script>
+<script type='text/javascript' src="/wp-content/themes/onepress/assets/js/bootstrap.min.js?ver=2.2.4" id='onepress-js-bootstrap-js'></script>
+<script type='text/javascript' src="/wp-content/themes/onepress/assets/js/isotope.pkgd.min.js?ver=2.2.4" id='onepress-gallery-masonry-js'></script>
+<script type='text/javascript' src="/wp-content/themes/onepress/assets/js/theme.js?ver=2.2.4" id='onepress-theme-js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.5.1/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script type="text/javascript">
+( function( sitekey, actions ) {
+
+	document.addEventListener( 'DOMContentLoaded', function( event ) {
+		var wpcf7recaptcha = {
+
+			execute: function( action ) {
+				grecaptcha.execute(
+					sitekey,
+					{ action: action }
+				).then( function( token ) {
+					var event = new CustomEvent( 'wpcf7grecaptchaexecuted', {
+						detail: {
+							action: action,
+							token: token,
+						},
+					} );
+
+					document.dispatchEvent( event );
+				} );
+			},
+
+			executeOnHomepage: function() {
+				wpcf7recaptcha.execute( actions[ 'homepage' ] );
+			},
+
+			executeOnContactform: function() {
+				wpcf7recaptcha.execute( actions[ 'contactform' ] );
+			},
+
+		};
+
+		grecaptcha.ready(
+			wpcf7recaptcha.executeOnHomepage
+		);
+
+		document.addEventListener( 'change',
+			wpcf7recaptcha.executeOnContactform, false
+		);
+
+		document.addEventListener( 'wpcf7submit',
+			wpcf7recaptcha.executeOnHomepage, false
+		);
+
+	} );
+
+	document.addEventListener( 'wpcf7grecaptchaexecuted', function( event ) {
+		var fields = document.querySelectorAll(
+			"form.wpcf7-form input[name='g-recaptcha-response']"
+		);
+
+		for ( var i = 0; i < fields.length; i++ ) {
+			var field = fields[ i ];
+			field.setAttribute( 'value', event.detail.token );
+		}
+	} );
+
+} )(
+	'6Lesf6wUAAAAAAIClWUldyiM7o0dbKYAcALn9ZDH',
+	{"homepage":"homepage","contactform":"contactform"}
+);
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-202101.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.5',blog:'140281493',post:'106',tz:'9',srv:'structuralengine.com'} ]);
+	_stq.push([ 'clickTrackerInit', '140281493', '106' ]);
+</script>
+
+</body>
+</html>
