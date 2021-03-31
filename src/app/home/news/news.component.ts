@@ -14,13 +14,14 @@ export class HomeNewsComponent implements OnInit  {
 
   ngOnInit(): void {
 
-    const requestOptions: Object = {
-      observe: "body",
-      responseType: "text"
-    };
     this.http.get("https://note.com/structuralengine/rss", {
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': '*'
+        'Cookie': 'XSRF-TOKEN=CqGzZmtE7BSnCQnPfR9ga74PkAwTLA7PaV51690ulNg%3D',
+        'Host': '<calculated when request is sent>',
+        'User-Agent': 'PostmanRuntime/7.26.10',
+        'Accept': '*/*',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
       })
     })
     .subscribe(
