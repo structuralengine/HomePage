@@ -6,124 +6,42 @@
       <div class="u-blog u-expanded-width-sm u-expanded-width-xs u-blog-1">
         <div class="u-repeater u-repeater-1">
           
-          <div class="u-align-center-sm u-align-center-xs u-blog-post u-container-style u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-1">
-              <a class="u-post-header-link" href="blog/1.html">
+          <ng-container *ngFor="let item of rss_feeds; index as i">
+            <div class="u-align-center-sm u-align-center-xs u-blog-post u-container-style u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
 
-                <img src="./assets/images/default-image.jpg" alt=""
-                  class="u-blog-control u-hidden-sm u-hidden-xs u-image u-image-default u-image-1"
-                  data-image-width="1232" data-image-height="441">
-
-              </a>
-
-              <h2 class="u-align-left u-blog-control u-text u-text-3">
-                <a class="u-post-header-link" href="blog/1.html">
-                  ボーリング柱状図自動読み取りコンテスト
+                <a class="u-post-header-link" href="{{item.link}}" target=”_blank”>
+                  <img src="{{item.thumbnail}}" alt=""
+                    class="u-blog-control u-hidden-sm u-hidden-xs u-image u-image-default u-image-1"
+                    data-image-width="1232" data-image-height="441">
                 </a>
-              </h2>
-              <div class="u-align-left u-blog-control u-post-content u-text u-text-4">
-                ボーリング柱状図から、xml ファイルを作ろう!!
-              </div>
-              <div class="u-blog-control u-metadata u-metadata-1">
-                <span class="u-meta-date u-meta-icon">
-                  Sat Mar 20 2021
-                </span>
-              </div>
-              <a href="blog/1.html"
-                class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-1">
-                Read More
-              </a>
-            </div>
-          </div>
 
-          <!--blog_post-->
-          <div class="u-align-center-sm u-align-center-xs u-blog-post u-container-style u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a class="u-post-header-link" href="blog/post-1.html">
-                <!--blog_post_image-->
-                <img src="./assets/images/default-image.jpg" alt=""
-                  class="u-blog-control u-hidden-sm u-hidden-xs u-image u-image-default u-image-2">
-                <!--/blog_post_image-->
-              </a>
-              <!--blog_post_header-->
-              <h2 class="u-align-left u-blog-control u-text u-text-5">
-                <a class="u-post-header-link" href="blog/post-1.html">
-                  <!--blog_post_header_content-->Post 2 Headline
-                  <!--/blog_post_header_content-->
+                <h2 class="u-align-left u-blog-control u-text u-text-3">
+                  <a class="u-post-header-link" href="{{item.link}}" target=”_blank”>
+                    {{item.title}}
+                  </a>
+                </h2>
+
+                <div class="u-align-left u-blog-control u-post-content u-text u-text-4"
+                  [innerHTML]=item.description>
+                </div>
+
+                <div class="u-blog-control u-metadata u-metadata-1">
+                  <span class="u-meta-date u-meta-icon">
+                    {{item.pubDate}}
+                  </span>
+                </div>
+
+                <a href="{{item.link}}" target=”_blank”
+                  class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-1">
+                  Read More
                 </a>
-              </h2>
-              <!--/blog_post_header-->
-              <!--blog_post_content-->
-              <div class="u-align-left u-blog-control u-post-content u-text u-text-6">
-                <!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.
-                <!--/blog_post_content_content-->
+
               </div>
-              <!--/blog_post_content-->
-              <!--blog_post_metadata-->
-              <div class="u-blog-control u-metadata u-metadata-2">
-                <!--blog_post_metadata_date-->
-                <span class="u-meta-date u-meta-icon">
-                  <!--blog_post_metadata_date_content-->Sat Mar 20 2021
-                  <!--/blog_post_metadata_date_content-->
-                </span>
-                <!--/blog_post_metadata_date-->
-              </div>
-              <!--/blog_post_metadata-->
-              <!--blog_post_readmore-->
-              <a href="blog/post-1.html"
-                class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-2">
-                <!--blog_post_readmore_content-->Read More
-                <!--/blog_post_readmore_content-->
-              </a>
-              <!--/blog_post_readmore-->
             </div>
-          </div>
-          <!--/blog_post-->
-          <!--blog_post-->
-          <div class="u-align-center-sm u-align-center-xs u-blog-post u-container-style u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-3">
-              <a class="u-post-header-link" href="blog/post-2.html">
-                <!--blog_post_image-->
-                <img src="./assets/images/default-image.jpg" alt=""
-                  class="u-blog-control u-hidden-sm u-hidden-xs u-image u-image-default u-image-3">
-                <!--/blog_post_image-->
-              </a>
-              <!--blog_post_header-->
-              <h2 class="u-align-left u-blog-control u-text u-text-7">
-                <a class="u-post-header-link" href="blog/post-2.html">
-                  <!--blog_post_header_content-->Post 3 Headline
-                  <!--/blog_post_header_content-->
-                </a>
-              </h2>
-              <!--/blog_post_header-->
-              <!--blog_post_content-->
-              <div class="u-align-left u-blog-control u-post-content u-text u-text-8">
-                <!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.
-                <!--/blog_post_content_content-->
-              </div>
-              <!--/blog_post_content-->
-              <!--blog_post_metadata-->
-              <div class="u-blog-control u-metadata u-metadata-3">
-                <!--blog_post_metadata_date-->
-                <span class="u-meta-date u-meta-icon">
-                  <!--blog_post_metadata_date_content-->Sat Mar 20 2021
-                  <!--/blog_post_metadata_date_content-->
-                </span>
-                <!--/blog_post_metadata_date-->
-              </div>
-              <!--/blog_post_metadata-->
-              <!--blog_post_readmore-->
-              <a href="blog/post-2.html"
-                class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-3">
-                <!--blog_post_readmore_content-->Read More
-                <!--/blog_post_readmore_content-->
-              </a>
-              <!--/blog_post_readmore-->
-            </div>
-          </div>
-          <!--/blog_post-->
+          </ng-container>
+
         </div>
       </div>
-      <!--/blog-->
     </div>
   </section>

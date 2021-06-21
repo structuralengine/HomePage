@@ -24,6 +24,7 @@ import { HomeNewsComponent } from './home/news/news.component';
 import { HomeRecruitComponent } from './home/recruit/recruit.component';
 import { HomeFaqComponent } from './home/faq/faq.component';
 import { HomeContactComponent } from './home/contact/contact.component';
+import { ParallaxComponent } from './home/parallax/parallax.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HomeContactComponent } from './home/contact/contact.component';
     HomeRecruitComponent,
     HomeNewsComponent,
     HomeFaqComponent,
-    HomeContactComponent
+    HomeContactComponent,
+    ParallaxComponent
   ],
   imports: [
     BrowserModule,

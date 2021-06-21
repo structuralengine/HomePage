@@ -8,23 +8,16 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class HomeNewsComponent implements OnInit { 
 
-  public url: string =
-  "https://asia-northeast1-the-structural-engine.cloudfunctions.net/note-rss";
-  // "https://asia-northeast1-the-structural-engine.cloudfunctions.net/note-rss";
-  
+  public url: string = "https://asia-northeast1-the-structural-engine.cloudfunctions.net/note-rss";
+  public rss_feeds: any[];
 
-public options = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  })
-};
-
-  constructor(private http: HttpClient,){}
+  constructor(private http: HttpClient,){
+    this.rss_feeds = [];
+  }
 
   ngOnInit() {
 
-    const url = 'https://google.com';
+    this.rss_feeds = [];
 
     this.http.get(this.url, {
       headers: new HttpHeaders({
@@ -32,15 +25,41 @@ public options = {
         'Accept': 'application/json'
       })
     })
-      .subscribe(
-        response => {
-          // 通信成功時の処理（成功コールバック）
-          console.log('通信成功!!', response);
-        },
-        error => {
-          console.log(error);
+    .subscribe(
+      response => {
+        // 通信成功時の処理（成功コールバック）
+        console.log('通信成功!!', response);
+        const res: any = response;
+        const feed = res.feed;
+        const entries = res.entries;
+        
+        const url = feed.link; // "https://note.com/structuralengine"
+        const icon = feed.webfeeds_icon;
+
+        for(const entry of entries){
+          const link = entry.link;
+          let thumbnail = entry.note_creatorimage;
+          if('media_thumbnail' in entry){
+            thumbnail = entry.media_thumbnail[0].url;
+          }
+          const title = entry.title;
+          const description = entry.summary;
+          const pubDate = entry.published;
+
+          this.rss_feeds.push({
+            link,
+            thumbnail,
+            title,
+            description,
+            pubDate
+          })
         }
-      );
+
+      },
+      error => {
+        console.log(error);
+      }
+    );
 
 
   }
