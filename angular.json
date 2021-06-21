@@ -35,7 +35,8 @@
             ],
             "scripts": [
               "src/lib/jquery.js",
-              "src/lib/nicepage.js"
+              "src/lib/nicepage.js",
+              "./node_modules/parallax-js/dist/parallax.min.js"
             ]
           },
           "configurations": {
@@ -100,8 +101,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/lib/jquery.js",
-              "src/lib/nicepage.js"
             ]
           }
         },
