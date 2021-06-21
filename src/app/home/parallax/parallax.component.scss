@@ -1,0 +1,36 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.container{
+    background: url("../../../assets/parallax/SkyCiv-Suite-min.jpg") no-repeat;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.pic1{
+  margin-left: 100px;
+  margin-top: 120px;
+}
+
+.pic2{
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+h2 {
+  color: white;
+}
+
+.pic3{
+  margin-left: 1200px;
+  margin-top: 30px;
+}
+
+.pic4{
+  margin-left: 600px;
+  margin-top: 200px;
+}
