@@ -7,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParallaxComponent implements OnInit {
 
-  constructor() { }
+  private Parallax: any
+  constructor() {
+    this.Parallax = require('parallax-js');
+   }
 
   ngOnInit(): void {
   }
 
   ngAfterContentInit() {
-    const Parallax = require('parallax-js')
     const scene = document.getElementById('scene');
-    const parallaxInstance = new Parallax(scene, {
+    const parallaxInstance = new this.Parallax(scene, {
       relativeInput: true,
       haverOnly: true
     });
